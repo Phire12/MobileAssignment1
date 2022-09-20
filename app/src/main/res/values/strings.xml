@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Test1</string>
+    <string name="take_image">Take Picture!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="upload_image">Upload Image!</string>
+</resources>
