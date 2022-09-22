@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.PackageManagerCompat;
+import androidx.appcompat.app.AppCompatActivity;
+import org.jetbrains.annotations.NotNull;
+import java.io.IOException;
 
 import android.Manifest;
 import android.content.ActivityNotFoundException;
@@ -13,10 +16,18 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.view.textclassifier.TextLinks;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.view.View;
 import android.widget.Toast;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttp;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 import com.google.android.material.button.MaterialButton;
 
@@ -33,6 +44,8 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         camBtn = (Button) findViewById(R.id.camButton);
         imageId = (ImageView) findViewById(R.id.click_image);
