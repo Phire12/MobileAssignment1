@@ -135,14 +135,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
 
     void connectServer(View v){
-        String postUrl= "http://10.153.10.14:5000/";
+        String postUrl= "http://10.153.34.25:5000/";
 
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inPreferredConfig = Bitmap.Config.RGB_565;
 
         Bitmap bitmap = BitmapFactory.decodeFile(selectedImageFile,options);
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
         byte[] byteArray = stream.toByteArray();
 
         RequestBody postBodyImage = new MultipartBody.Builder()
