@@ -40,12 +40,5 @@ public class SecondActivity extends AppCompatActivity {
         recyclerView.setAdapter(new Adapter(getApplicationContext(),filesAndFolders));
     }
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(requestCode == 123){
-            Bitmap photo = (Bitmap) data.getExtras().get("data");
-            //imageId.setImageBitmap(photo);
-
-        }
-    }
 
 }
