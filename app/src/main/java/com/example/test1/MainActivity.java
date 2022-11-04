@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
 
-
                 //Intent intent = new Intent();
                 //intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
                 //startActivityForResult(intent, 123);
@@ -108,11 +107,11 @@ public class MainActivity extends AppCompatActivity{
             //Bundle extras = data.getExtras();
             //Bitmap photo = (Bitmap) extras.get("data");
             //imageId.setImageBitmap(photo);
-            Bitmap photo = (Bitmap) data.getExtras().get("data");
-            imageId.setImageBitmap(photo);
+            //Bitmap photo = (Bitmap) data.getExtras().get("data");
+            //imageId.setImageBitmap(photo);
 
-            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-            intent.putExtra("BitmapImage", photo);
+            //Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            //intent.putExtra("BitmapImage", photo);
         }
     }
 
@@ -141,10 +140,10 @@ public class MainActivity extends AppCompatActivity{
             }
 
             if (photoFile != null){
-                /*Uri photoURI = FileProvider.getUriForFile(this,
+                Uri photoURI = FileProvider.getUriForFile(MainActivity.this,
                                         "com.example.test1",
                                                 photoFile);
-                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);*/
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
             }
        // }

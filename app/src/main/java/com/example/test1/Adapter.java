@@ -74,12 +74,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);
                     selectedImageFile = path;
+
                 }else{      //if it is a file
                     try {
                         Intent intent = new Intent();
                         intent.setAction(android.content.Intent.ACTION_VIEW);
                         String type = "image/*";
                         intent.setDataAndType(Uri.parse(selectedFile.getAbsolutePath()), type);
+                        String path = selectedFile.getAbsolutePath();
+                        selectedImageFile = path;
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         context.startActivity(intent);
                     }catch (Exception e){   //can't open likely not an image
@@ -100,7 +103,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
                         if(item.getTitle().equals("Upload")){
-                            //Toast.makeText(context.getApplicationContext(),"Uploaded", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context.getApplicationContext(),"Uploaded", Toast.LENGTH_SHORT).show();
                             connectServer(view);
                         }
 
@@ -135,7 +138,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
 
     void connectServer(View v){
-        String postUrl= "http://10.153.34.25:5000/";
+        String postUrl= "http://10.153.39.254:5000/";
 
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         BitmapFactory.Options options = new BitmapFactory.Options();
